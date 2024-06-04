@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
-import './index.css';
-import CodeEditor from './components/CodeEditor';
-import useStore from './store';
-import { themes } from './configs/theme';
-import { fonts } from './configs/font';
-import { mergeClassNames } from './utils/mergeClassName';
+import { Button } from '@nextui-org/react';
 import { Resizable } from "re-resizable";
+import { useEffect, useRef, useState } from 'react';
+import CodeEditor from './components/CodeEditor';
 import ToolBar from './components/ToolBar';
 import WidthMeasurement from './components/WidthMeasurement';
-import { Button } from '@nextui-org/react';
+import { fonts } from './configs/font';
+import { themes } from './configs/theme';
 import { useCheckMobile } from './hooks/useCheckMobile';
+import './index.css';
+import useStore from './store';
+import { mergeClassNames } from './utils/mergeClassName';
 
 function App() {
   const [width, setWidth] = useState("auto");
@@ -50,17 +50,6 @@ function App() {
             onResizeStart={() => setShowWidth(true)}
             onResizeStop={() => setShowWidth(false)}
           >
-            {
-              isMobile
-                ? null : (
-                  <>
-                    <div className="bg-slate-300 absolute w-[8px] h-[8px] rounded-[4px] top-[calc(50%-32px)] left-[-4px]">
-                    </div>
-                    <div className="bg-slate-300 absolute w-[8px] h-[8px] rounded-[4px] top-[calc(50%-32px)] right-[-4px]">
-                    </div>
-                  </>
-                )
-            }
             <div
               className={mergeClassNames(
                 "overflow-hidden mb-2 transition-all ease-out",
