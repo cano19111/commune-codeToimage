@@ -1,6 +1,7 @@
 import { NextUIProvider } from "@nextui-org/react";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import App from './App';
 import './index.css';
@@ -11,6 +12,7 @@ root.render(
   <React.StrictMode>
     <NextUIProvider>
       <App />
+      <ToastContainer />
     </NextUIProvider>
   </React.StrictMode>
 );

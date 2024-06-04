@@ -50,6 +50,17 @@ function App() {
             onResizeStart={() => setShowWidth(true)}
             onResizeStop={() => setShowWidth(false)}
           >
+            {
+              isMobile
+                ? null : (
+                  <>
+                    <div className="bg-slate-300 absolute w-[8px] h-[8px] rounded-[4px] top-[calc(50%-32px)] left-[-4px]">
+                    </div>
+                    <div className="bg-slate-300 absolute w-[8px] h-[8px] rounded-[4px] top-[calc(50%-32px)] right-[-4px]">
+                    </div>
+                  </>
+                )
+            }
             <div
               className={mergeClassNames(
                 "overflow-hidden mb-2 transition-all ease-out",
